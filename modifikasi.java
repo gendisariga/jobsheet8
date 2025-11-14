@@ -1,0 +1,39 @@
+import java.util.Scanner;
+public class modifikasi {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int i = 1;
+        int nilai;
+        float totalNilai, rataNilai;
+
+        float rataTertinggi = 0;      // menyimpan rata-rata tertinggi
+        int kelompokTertinggi = 0;    // menyimpan nomor kelompok dengan rata-rata tertinggi
+
+        while (i <= 6) {
+            System.out.println("Kelompok " + i);
+
+            totalNilai = 0;
+            for (int j = 1; j <= 5; j++) {
+                System.out.print("Nilai dari kelompok penilai " + j + ": ");
+                nilai = sc.nextInt();
+                totalNilai += nilai;
+            }
+
+            rataNilai = totalNilai / 5;
+            System.out.println("Kelompok " + i + " Nilai rata-rata = " + rataNilai);
+
+            // Cek apakah rata-rata kelompok ini adalah yang tertinggi
+            if (rataNilai > rataTertinggi) {
+                rataTertinggi = rataNilai;
+                kelompokTertinggi = i;
+            }
+
+            i++;
+        }
+
+        // Tampilkan hasil akhirnya
+        System.out.println("\nKelompok dengan rata-rata tertinggi adalah Kelompok "
+                            + kelompokTertinggi + " dengan rata-rata " + rataTertinggi);
+    }
+}
+
